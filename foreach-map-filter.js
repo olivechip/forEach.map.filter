@@ -38,7 +38,7 @@ Examples:
 
 */
 function showFirstAndLast(arr){
-    arr.map(function(string){
+    return arr.map(function(string){
         const arrString = Array.from(string);
         return arrString[0]+arrString[arrString.length-1];
     })
@@ -71,7 +71,11 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
+    const vowels = ['a','e','i','o','u'];
+    const arrString = Array.from(str);
+
+
+
 }
 
 /*
@@ -112,7 +116,7 @@ Examples:
 */
 
 function extractKey(arr, key){
-        arr.map(function(obj){
+    return arr.map(function(obj){
         return obj[key];
     })
 }
@@ -136,7 +140,9 @@ Examples:
 */
 
 function filterByValue(arr, key) {
- 
+    return arr.filter(function(obj){
+        return obj[key] === true;
+    })
 }
 
 /*
@@ -147,7 +153,17 @@ Examples:
     find([1,2,3,4,5], 10) // undefined
 */
 
-function find(arr, searchValue) {}
+function find(arr, searchValue) {
+    const value = arr.filter(function(val){
+        return val === searchValue;
+    })
+    return value[0];
+}
+
+function find(arr, searchValue) {
+    let index = arr.indexOf(searchValue);
+    return arr[index];
+}
 
 /*
 Write a function called findInObj which accepts an array of objects, a key, and some value to search for and returns the first found value in the array.
